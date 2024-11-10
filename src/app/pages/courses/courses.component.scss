@@ -1,0 +1,25 @@
+.box {
+  background: white;
+  padding: 2vh 4vh;
+  height: 50vh;
+  .course-image {
+    height: 25vh;
+    width: 100%;
+    background: #3b99a0;
+    // background-size: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  p {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+}
+
+button {
+  position: absolute;
+  margin-left: -5vh;
+}

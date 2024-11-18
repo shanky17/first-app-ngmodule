@@ -11,7 +11,7 @@
           id="title"
           name="title"
           #title="ngModel"
-          [(ngModel)]="model.title"
+          [(ngModel)]="model().title"
           required
         />
         @if (title.invalid && title.touched) {
@@ -30,7 +30,7 @@
           id="description"
           name="description"
           #description="ngModel"
-          [(ngModel)]="model.description"
+          [(ngModel)]="model().description"
           required
         ></textarea>
         @if (description.invalid && description.touched) {
@@ -50,11 +50,11 @@
           ngModel
           required
         />
-        @if (cover) {
+        @if (cover()) {
         <div class="imageDiv" align="right">
-          <img [src]="cover" alt="" />
+          <img [src]="cover()" alt="" />
         </div>
-        } @if (showError) {
+        } @if (showError()) {
         <div class="text-danger">Image is required.</div>
         }
       </div>

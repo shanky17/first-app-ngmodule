@@ -15,6 +15,7 @@ export class AdminComponent {
   cover = signal<string | null>(null);
   cover_file = signal<any>(null);
   showError = signal<boolean>(false);
+  isSaved = signal<boolean>(false);
 
   onFileSelected(event: any): void {
     const file = event.target.files[0];
@@ -55,6 +56,11 @@ export class AdminComponent {
       };
 
       await this.courseService.addCourse(data);
+
+      this.isSaved.set(true);
+      setTimeout(() => {
+        this.isSaved.set(false);
+      }, 1500);
       this.clearForm(form);
     } catch (err) {
       console.log(err);
